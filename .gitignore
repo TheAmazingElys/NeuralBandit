@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/data/covtype.data.gz
+/data/covtype.data/covtype.data
