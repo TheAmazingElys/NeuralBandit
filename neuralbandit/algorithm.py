@@ -57,6 +57,9 @@ class LinUCB():
     """
     
     def __init__(self, K, D, inversion_interval = 100):
+        """
+        The inversion of the matrix is an expensive task an will be performed only every "inversion_interval" iterations
+        """
 
         self._K = K
         self._D = D
@@ -64,14 +67,19 @@ class LinUCB():
         self.reset()
 
     def select(self, context):
+        """
+        Selection the most optimal action using an upper confidence bound
+        """
         with torch.no_grad():
-
-            value = context.mm(self._theta)
+            value = torch.Tensor([context.mm(i_theta) for i_theta in self._theta])
             confidence_interval = torch.stack([torch.sqrt(context.mm(self._A_inv[k]).mm(context.transpose(0,1))) for k in range(self._K)]).reshape(len(context), self._K)
             _, best_action = torch.max(value + confidence_interval, 1)
             return int(best_action[0])
 
     def observe(self, played_arm, context, reward, update = False):
+        """
+        Update of the counts. Predictions will be updated only after calling self._invert()
+        """
         with torch.no_grad():
             self._A[played_arm] = self._A[played_arm] + context.transpose(0,1).mm(context)
             self._b[played_arm] = self._b[played_arm] + torch.transpose(context * reward, 0, 1)
@@ -81,17 +89,17 @@ class LinUCB():
             self.t += 1
 
     def reset(self):
-
+        
         self.t = 0
-
-        self._A = torch.eye(self._D) 
-        self._A = self._A.reshape((1, self._D, self._D))
-        self._A = self._A.repeat(self._K, 1, 1) # Create a batch of K identity matrix (one for each arm)
-        self._b = torch.zeros((self._K, self._D, 1))
+        self._A = [torch.eye(self._D) for k in range(self._K)]
+        self._b = [torch.zeros((self._D, 1)) for k in range(self._K)]
 
         self._invert()
 
     def _invert(self):
+        """
+        Matrix inversion to update the model
+        """
         with torch.no_grad():
-            self._A_inv = self._A.inverse()
-            self._theta = self._A_inv.bmm(self._b).squeeze().transpose(0,1)
+            self._A_inv = [a.inverse() for a in self._A]
+            self._theta = [self._A_inv[k].mm(self._b[k]) for k in range(self._K)]
