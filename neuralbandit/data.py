@@ -70,6 +70,7 @@ def get_cov_dataset():
         "Aspect",
         "Slope",
         "Horizontal_Distance_To_Hydrology",
+        "Vertical_Distance_To_Hydrology",
         "Horizontal_Distance_To_Roadways",
         "Hillshade_9am",
         "Hillshade_Noon",
@@ -85,7 +86,7 @@ def get_cov_dataset():
     """
     Following Allesiardo et al (https://arxiv.org/abs/1409.8191) we discretize each continuous features using an equal frequency binning of size 5
     """
-    continuous_features = ["Elevation", "Aspect", "Slope", "Horizontal_Distance_To_Hydrology", "Horizontal_Distance_To_Roadways", "Hillshade_9am", "Hillshade_3pm", "Horizontal_Distance_To_Fire_Points", "Hillshade_Noon"]
+    continuous_features = ["Elevation", "Aspect", "Slope", "Horizontal_Distance_To_Hydrology", "Vertical_Distance_To_Hydrology", "Horizontal_Distance_To_Roadways", "Hillshade_9am", "Hillshade_3pm", "Horizontal_Distance_To_Fire_Points", "Hillshade_Noon"]
     nb_bin = 5
 
     for i_feature_name in continuous_features:
