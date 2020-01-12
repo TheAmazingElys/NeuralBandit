@@ -23,8 +23,7 @@ class ContextualBanditGame():
         """
         Return a generator yielding the contexts and updating the label
         """
-        print("generator")
-
+        
         self._dataloader = DataLoader(self._dataset, batch_size=1,
                         shuffle=True)
         self._t = 0
