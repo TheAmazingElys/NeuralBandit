@@ -12,7 +12,7 @@ def download_dataset(source_url, destination):
 
 class ContextualBanditDataset(Dataset):
 
-    def __init__(self, contexts, target, len_ = None):
+    def __init__(self, contexts, target, optimal_accuracy = 1):
         """
         contexts: matrix of size N x D
         target: the list of size N of the classes associated to the contexts
@@ -23,6 +23,8 @@ class ContextualBanditDataset(Dataset):
         self._target = target
         self._K = len(self._target.astype('category').cat.categories)
         self._D = len(self._contexts[0])
+        
+        self.optimal_accuracy = optimal_accuracy
             
     def __len__(self):
         return len(self._target)
@@ -81,7 +83,7 @@ def get_cov_dataset():
     df = pd.read_csv(cov_path, compression='gzip', header = None, names = names)
 
     """
-    Following Allesiardo et all (https://arxiv.org/abs/1409.8191) we discretize each continuous features using an equal frequency binning of size 5
+    Following Allesiardo et al (https://arxiv.org/abs/1409.8191) we discretize each continuous features using an equal frequency binning of size 5
     """
     continuous_features = ["Elevation", "Aspect", "Slope", "Horizontal_Distance_To_Hydrology", "Horizontal_Distance_To_Roadways", "Hillshade_9am", "Hillshade_3pm", "Horizontal_Distance_To_Fire_Points", "Hillshade_Noon"]
     nb_bin = 5
@@ -101,7 +103,10 @@ def get_cov_dataset():
     target = df[target_name].astype('category').cat.codes
     del df[target_name]
 
-    contexts = torch.from_numpy(df.values)
+    contexts = torch.from_numpy(df.values).float()
     del df
     
-    return ContextualBanditDataset(contexts, target)
+    """
+    The optimal policy used by Allesiardo et al (https://arxiv.org/abs/1409.8191) achieves 93% of good classification
+    """
+    return ContextualBanditDataset(contexts, target, 0.93)
