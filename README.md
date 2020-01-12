@@ -6,8 +6,9 @@ This WIP repository reproduces the experiments of the [NeuralBandit](https://lin
 #### NeuralBandit Paper
 * Implementation of NeuralBandit1 (it could be useful!)
 * Implementation of NeuralBandit2
-#### BanditForest Paper
 * Adding concept drift to the Game
+
+#### BanditForest Paper
 * Adding Census et Adult dataset
 * Adding Noise to the reward
 
