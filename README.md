@@ -7,7 +7,6 @@ This WIP repository reproduces the experiments of the [NeuralBandit](https://hal
     + [NeuralBandit](#neuralbandit-1)
     + [BanditForest](#banditforest)
 
-
 ### TODO List
 #### NeuralBandit Paper
 * Implementation of NeuralBandit.A and .B
@@ -30,10 +29,10 @@ T = int(2.5E6)
 
 game = ContextualBanditGame(dataset, T)
 #player = RandomBandit(dataset.K)
-#player = BanditTron(dataset.K, dataset.D)
-player = LinUCB(dataset.K, dataset.D)
+#player = LinUCB(dataset.K, dataset.D)
+player = NeuralBandit(dataset.K, dataset.D, layer_count = 1, layer_size = 64, gamma = 0.05)
 
-for t in range(T):
+for t in tqdm(range(T)):
         context = game.get_context()
         action = player.select(context)
         reward = game.play(action)
@@ -41,6 +40,8 @@ for t in range(T):
         cumulative_reward += reward
         
         player.observe(action, context, reward)
+
+            
             
 cumulative_regret = (T*game.optimal_accuracy - cumulative_reward)
 print(cumulative_regret)
