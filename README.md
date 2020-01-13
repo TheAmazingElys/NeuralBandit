@@ -4,8 +4,7 @@ This WIP repository reproduces the experiments of the [NeuralBandit](https://hal
 
 ### TODO List
 #### NeuralBandit Paper
-* Implementation of NeuralBandit1 (it could be useful!)
-* Implementation of NeuralBandit2
+* Implementation of NeuralBandit.A and .B
 * Adding concept drift to the Game
 
 #### BanditForest Paper
@@ -15,8 +14,8 @@ This WIP repository reproduces the experiments of the [NeuralBandit](https://hal
 ### Steps to reproduce
 ```python
 
-from neuralbandit import get_cov_dataset, ContextualBanditGame
-from neuralbandit.algorithm import RandomBandit, BanditTron, LinUCB
+from neuralbandit import get_cov_dataset, ContextualBanditGame, NeuralBandit
+from neuralbandit.sota import RandomBandit, BanditTron, LinUCB
 
 dataset = get_cov_dataset()
 
