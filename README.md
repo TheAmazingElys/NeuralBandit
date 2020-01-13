@@ -8,6 +8,8 @@ This WIP repository reproduces the experiments of the [NeuralBandit](https://hal
     + [BanditForest](#banditforest)
 
 ### TODO List
+#### Doing the requirements.txt
+#### Automating the run of experiments
 #### NeuralBandit Paper
 * Implementation of NeuralBandit.A and .B
 * Adding concept drift to the Game
