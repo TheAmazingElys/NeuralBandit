@@ -8,15 +8,15 @@ This WIP repository reproduces the experiments of the [NeuralBandit](https://hal
     + [BanditForest](#banditforest)
 
 ### TODO List
-#### Doing the requirements.txt
-#### Automating the run of experiments
-#### NeuralBandit Paper
-* Implementation of NeuralBandit.A and .B
-* Adding concept drift to the Game
+* Doing the requirements.txt
+* Automating the run of experiments
+* NeuralBandit Paper
+    * Implementation of NeuralBandit.A and .B
+    * Adding concept drift to the Game
 
-#### BanditForest Paper
-* Adding Census et Adult dataset
-* Adding Noise to the reward
+* BanditForest Paper
+    * Adding Census et Adult dataset
+    * Adding Noise to the reward
 
 ### Steps to reproduce
 ```python
