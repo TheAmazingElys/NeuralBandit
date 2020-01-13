@@ -41,8 +41,6 @@ for t in tqdm(range(T)):
         
         player.observe(action, context, reward)
 
-            
-            
 cumulative_regret = (T*game.optimal_accuracy - cumulative_reward)
 print(cumulative_regret)
 ```
