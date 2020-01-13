@@ -58,7 +58,7 @@ class LinUCB():
     
     def __init__(self, K, D, inversion_interval = 100):
         """
-        The inversion of the matrix is an expensive task an will be performed only every "inversion_interval" iterations
+        The inversion of the matrix is an expensive task and will be performed only every "inversion_interval" iterations
         """
 
         self._K = K
