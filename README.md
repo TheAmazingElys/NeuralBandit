@@ -2,6 +2,15 @@
 
 This WIP repository reproduces the experiments of the [NeuralBandit](https://hal.archives-ouvertes.fr/hal-01117311/document) and [BanditForest](http://proceedings.mlr.press/v51/feraud16.html) papers. The code of BanditForest is available [here](https://www.researchgate.net/publication/308305599_Test_code_for_Bandit_Forest_algorithm).
 
+- [TODO List](#todo-list)
+    + [NeuralBandit Paper](#neuralbandit-paper)
+    + [BanditForest Paper](#banditforest-paper)
+- [Steps to reproduce](#steps-to-reproduce)
+- [Citations](#citations)
+    + [NeuralBandit](#neuralbandit-1)
+    + [BanditForest](#banditforest)
+
+
 ### TODO List
 #### NeuralBandit Paper
 * Implementation of NeuralBandit.A and .B
