@@ -1,3 +1,5 @@
+import torch
+
 def get_simple_network(context_dimension, layer_count, layer_size):
     """
     Simple Network used in the NeuralBandit paper (https://hal.archives-ouvertes.fr/hal-01117311/document)
