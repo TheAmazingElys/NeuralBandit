@@ -3,13 +3,13 @@
 This WIP repository reproduces the experiments of the [NeuralBandit](https://hal.archives-ouvertes.fr/hal-01117311/document) and [BanditForest](http://proceedings.mlr.press/v51/feraud16.html) papers. The code of BanditForest is available [here](https://www.researchgate.net/publication/308305599_Test_code_for_Bandit_Forest_algorithm).
 
 ### Table of contents
+- [Installation](#installation)
 - [Steps to reproduce](#steps-to-reproduce)
 - [Citations](#citations)
     + [NeuralBandit](#neuralbandit-1)
     + [BanditForest](#banditforest)
 
 ### TODO List
-* Doing the requirements.txt
 * Automating the run of experiments
 * NeuralBandit Paper
     * Implementation of NeuralBandit.A and .B
@@ -18,6 +18,9 @@ This WIP repository reproduces the experiments of the [NeuralBandit](https://hal
 * BanditForest Paper
     * Adding Census et Adult dataset
     * Adding Noise to the reward
+
+### Installation
+Use ```pip install neuralbandit``` to install the package from pip or clone the repository and install the package from the sources with the package manager [poetry](https://python-poetry.org/) by using the command ```poetry install```.
 
 ### Steps to reproduce
 ```python
@@ -70,7 +73,24 @@ abstract="This paper presents a new contextual bandit algorithm, NeuralBandit, w
 isbn="978-3-319-12637-1"
 }
 ```
+#### Selection of Learning Expert
+The paper **Selection of Learning Expert** provides theoretical insights on the methodology used by the commitee of neural networks of the **NeuralBandit** paper.
+```
+@INPROCEEDINGS{7965962,
+author={R. {Allesiardo} and R. {Feraud}},
+booktitle={2017 International Joint Conference on Neural Networks (IJCNN)},
+title={Selection of learning experts},
+year={2017},
+volume={},
+number={},
+pages={1005-1010},
+keywords={game theory;learning (artificial intelligence);pattern classification;learning expert selection;online classification models;expert parametrization;hypothesis space;contextual bandits;adversarial problem;successive elimination algorithm;EXP 3 algorithm;bandit forests;Context;Approximation algorithms;Approximation error;Context modeling;Estimation error;Complexity theory;Stochastic processes},
+doi={10.1109/IJCNN.2017.7965962},
+ISSN={2161-4407},
+month={May},}
+```
 #### BanditForest
+The code of BanditForest is available [here](https://www.researchgate.net/publication/308305599_Test_code_for_Bandit_Forest_algorithm).
 ```
 @InProceedings{pmlr-v51-feraud16,
   title = 	 {Random Forest for the Contextual Bandit Problem},
