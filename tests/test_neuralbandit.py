@@ -3,7 +3,7 @@ from neuralbandit import get_cov_dataset, ContextualBanditGame, NeuralBandit
 from neuralbandit.sota import RandomBandit, Banditron, LinUCB
 
 def test_version():
-    assert __version__ == '0.1.1'
+    assert __version__ == '0.1.2'
 
 def test_everything():
 
