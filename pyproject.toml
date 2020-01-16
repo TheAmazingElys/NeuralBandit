@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "neuralbandit"
+version = "0.1.0"
+description = "Reproducing the experiments of the NeuralBandit and BanditForest papers. "
+authors = ["rallesiardo <robin.allesiardo@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+numpy = "^1.18.1"
+torch = "^1.4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
