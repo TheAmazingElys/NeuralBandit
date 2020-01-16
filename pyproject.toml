@@ -1,8 +1,12 @@
 [tool.poetry]
 name = "neuralbandit"
-version = "0.1.1"
+version = "0.1.2"
 description = "Reproducing the experiments of the NeuralBandit and BanditForest papers. "
 authors = ["rallesiardo <robin.allesiardo@gmail.com>"]
+readme = 'README.md'  # Markdown files are supported
+repository = "https://github.com/rallesiardo/NeuralBandit"
+homepage = "https://github.com/rallesiardo/NeuralBandit"
+
 
 [tool.poetry.dependencies]
 python = "^3.7"
