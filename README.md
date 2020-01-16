@@ -2,14 +2,22 @@
 
 This WIP repository reproduces the experiments of the [NeuralBandit](https://hal.archives-ouvertes.fr/hal-01117311/document) and [BanditForest](http://proceedings.mlr.press/v51/feraud16.html) papers. The code of BanditForest is available [here](https://www.researchgate.net/publication/308305599_Test_code_for_Bandit_Forest_algorithm).
 
-### TODO List
-#### NeuralBandit Paper
-* Implementation of NeuralBandit.A and .B
-* Adding concept drift to the Game
+### Table of contents
+- [Steps to reproduce](#steps-to-reproduce)
+- [Citations](#citations)
+    + [NeuralBandit](#neuralbandit-1)
+    + [BanditForest](#banditforest)
 
-#### BanditForest Paper
-* Adding Census et Adult dataset
-* Adding Noise to the reward
+### TODO List
+* Doing the requirements.txt
+* Automating the run of experiments
+* NeuralBandit Paper
+    * Implementation of NeuralBandit.A and .B
+    * Adding concept drift to the Game
+
+* BanditForest Paper
+    * Adding Census et Adult dataset
+    * Adding Noise to the reward
 
 ### Steps to reproduce
 ```python
@@ -24,10 +32,10 @@ T = int(2.5E6)
 
 game = ContextualBanditGame(dataset, T)
 #player = RandomBandit(dataset.K)
-#player = BanditTron(dataset.K, dataset.D)
-player = LinUCB(dataset.K, dataset.D)
+#player = LinUCB(dataset.K, dataset.D)
+player = NeuralBandit(dataset.K, dataset.D, layer_count = 1, layer_size = 64, gamma = 0.05)
 
-for t in range(T):
+for t in tqdm(range(T)):
         context = game.get_context()
         action = player.select(context)
         reward = game.play(action)
@@ -35,7 +43,7 @@ for t in range(T):
         cumulative_reward += reward
         
         player.observe(action, context, reward)
-            
+
 cumulative_regret = (T*game.optimal_accuracy - cumulative_reward)
 print(cumulative_regret)
 ```
