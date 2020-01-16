@@ -73,8 +73,8 @@ abstract="This paper presents a new contextual bandit algorithm, NeuralBandit, w
 isbn="978-3-319-12637-1"
 }
 ```
-#### Selection of Learning Expert
-The paper **Selection of Learning Expert** provides theoretical insights on the methodology used by the commitee of neural networks of the **NeuralBandit** paper.
+#### Selection of Learning Experts
+The paper **Selection of Learning Experts** provides theoretical insights on the methodology used by the commitee of neural networks of the **NeuralBandit** paper.
 ```
 @INPROCEEDINGS{7965962,
 author={R. {Allesiardo} and R. {Feraud}},
