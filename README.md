@@ -90,6 +90,7 @@ ISSN={2161-4407},
 month={May},}
 ```
 #### BanditForest
+The code of BanditForest is available [here](https://www.researchgate.net/publication/308305599_Test_code_for_Bandit_Forest_algorithm).
 ```
 @InProceedings{pmlr-v51-feraud16,
   title = 	 {Random Forest for the Contextual Bandit Problem},
