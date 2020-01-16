@@ -18,9 +18,9 @@ class RandomBandit():
         pass
 
 
-class BanditTron():
+class Banditron():
     """
-    Implementation of the BanditTron paper (https://www.cse.huji.ac.il/~shais/papers/TewariShKa08.pdf)
+    Implementation of the Banditron paper (https://www.cse.huji.ac.il/~shais/papers/TewariShKa08.pdf)
     """
     def __init__(self, action_count, context_dimension, gamma = 0.05):
         

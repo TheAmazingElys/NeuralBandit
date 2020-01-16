@@ -1,4 +1,4 @@
-import torch
+import itertools, numpy as np, torch, torch.nn as nn
 
 def get_simple_network(context_dimension, layer_count, layer_size):
     """
