@@ -7,6 +7,7 @@ This WIP repository reproduces the experiments of the [NeuralBandit](https://hal
 - [Steps to reproduce](#steps-to-reproduce)
 - [Citations](#citations)
     + [NeuralBandit](#neuralbandit-1)
+    + [Selection of Learning Experts](#selection-of-learning-experts)
     + [BanditForest](#banditforest)
 
 ### TODO List
