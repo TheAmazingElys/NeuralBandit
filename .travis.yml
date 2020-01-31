@@ -1,1 +1,25 @@
 language: python
+python: "3.6"
+
+stages:
+  - lint
+  - test
+  
+cache:
+  pip: true
+  
+jobs:
+  include:
+    - stage: lint
+      install:
+        - pip install pre-commit
+        - pre-commit install-hooks
+      script:
+        - pre-commit run --all-files
+    - stage: test
+      install:
+        - pip install --upgrade pip
+        - pip install poetry
+        - poetry install -v
+      script:
+        - pytest
