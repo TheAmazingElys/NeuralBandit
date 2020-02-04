@@ -30,4 +30,4 @@ def test_everything():
             
     cumulative_regret = (T*game.optimal_accuracy - cumulative_reward)
 
-    assert True # \o/ We didn't crashed!
+    assert True # \o/ We didn't crash!
