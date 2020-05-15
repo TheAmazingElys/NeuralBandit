@@ -27,6 +27,7 @@ Use ```pip install neuralbandit``` to install the package from pip or clone the 
 ### Steps to reproduce
 ```python
 
+from tqdm.notebook import tqdm
 from neuralbandit import get_cov_dataset, ContextualBanditGame, NeuralBandit
 from neuralbandit.sota import RandomBandit, Banditron, LinUCB
 
