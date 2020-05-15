@@ -28,7 +28,7 @@ Use ```pip install neuralbandit``` to install the package from pip or clone the 
 ```python
 
 from neuralbandit import get_cov_dataset, ContextualBanditGame, NeuralBandit
-from neuralbandit.sota import RandomBandit, BanditTron, LinUCB
+from neuralbandit.sota import RandomBandit, Banditron, LinUCB
 
 dataset = get_cov_dataset()
 
