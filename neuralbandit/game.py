@@ -64,9 +64,9 @@ class ContextualBanditGame():
         if self._label is None:
             return None
         
-        self._action_played = True # We told the generator that an action has be played
+        self._action_played = True # We tell the generator that an action has be played
         
-        if self._label.data == action: #If the action match the label the reward is 1 else 0
+        if self._label.data == action: #If the action matches the label the reward is 1 else 0
             reward =  1
         else:
             reward =  0
