@@ -1,5 +1,6 @@
 # NeuralBandit
 [![Build Status](https://api.travis-ci.org/rallesiardo/NeuralBandit.svg?branch=master)](https://travis-ci.org/rallesiardo/NeuralBandit)
+[![PyPI version](https://badge.fury.io/py/neuralbandit.svg)](https://badge.fury.io/py/neuralbandit)
 
 This WIP repository reproduces the experiments of the [NeuralBandit](https://hal.archives-ouvertes.fr/hal-01117311/document) and [BanditForest](http://proceedings.mlr.press/v51/feraud16.html) papers. The code of BanditForest is available [here](https://www.researchgate.net/publication/308305599_Test_code_for_Bandit_Forest_algorithm).
 
